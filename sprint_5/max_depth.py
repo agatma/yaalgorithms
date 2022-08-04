@@ -13,10 +13,7 @@ def solution(root) -> int:
     left = solution(root.left)
     right = solution(root.right)
 
-    if left > right:
-        return left + 1
-    else:
-        return right + 1
+    return left + 1 if left > right else right + 1
 
 
 def test():

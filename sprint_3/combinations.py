@@ -15,9 +15,7 @@ def combinations(input_string):
     word = d[input_string[-1]]
 
     for combination in combinations(input_string[:-1:]):
-        for c in word:
-            data.append(combination + c)
-
+        data.extend(combination + c for c in word)
     return data
 
 

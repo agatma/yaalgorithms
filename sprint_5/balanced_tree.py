@@ -7,10 +7,7 @@ class Node:
 
 
 def height(root):
-    if root is None:
-        return 0
-
-    return max(height(root.left), height(root.right)) + 1
+    return 0 if root is None else max(height(root.left), height(root.right)) + 1
 
 
 def solution(root):
@@ -20,10 +17,11 @@ def solution(root):
     lh = height(root.left)
     rh = height(root.right)
 
-    if (abs(lh-rh) <= 1) and solution(root.left) is True and solution(root.right) is True:
-        return True
-
-    return False
+    return (
+        abs(lh - rh) <= 1
+        and solution(root.left) is True
+        and solution(root.right) is True
+    )
 
 
 def test():

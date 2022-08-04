@@ -57,36 +57,32 @@ class Deck:
     def push_back(self, value):
         if self.is_full:
             raise MaxItemsException
-        else:
-            self._tail = (self._tail + 1) % self._max_size
-            self._array[self._tail] = value
-            self._size += 1
+        self._tail = (self._tail + 1) % self._max_size
+        self._array[self._tail] = value
+        self._size += 1
 
     def push_front(self, value):
         if self.is_full:
             raise MaxItemsException
-        else:
-            self._head = (self._head - 1) % self._max_size
-            self._array[self._head] = value
-            self._size += 1
+        self._head = (self._head - 1) % self._max_size
+        self._array[self._head] = value
+        self._size += 1
 
     def pop_back(self):
         if self.is_empty:
             raise NoItemsException
-        else:
-            value = self._array[self._tail]
-            self._tail = (self._tail - 1) % self._max_size
-            self._size -= 1
-            return value
+        value = self._array[self._tail]
+        self._tail = (self._tail - 1) % self._max_size
+        self._size -= 1
+        return value
 
     def pop_front(self):
         if self.is_empty:
             raise NoItemsException
-        else:
-            value = self._array[self._head]
-            self._head = (self._head + 1) % self._max_size
-            self._size -= 1
-            return value
+        value = self._array[self._head]
+        self._head = (self._head + 1) % self._max_size
+        self._size -= 1
+        return value
 
 
 n = int(input())

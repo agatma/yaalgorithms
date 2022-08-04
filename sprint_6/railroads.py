@@ -105,15 +105,11 @@ def dfs_is_cyclic(start_vertex, adjacency, colors):
 def is_cyclic(adjacency):
     colors = [WHITE] * len(adjacency)
 
-    for i in range(len(adjacency)):
-        if dfs_is_cyclic(i, adjacency, colors):
-            return True
-
-    return False
+    return any(dfs_is_cyclic(i, adjacency, colors) for i in range(len(adjacency)))
 
 
 n = int(sys.stdin.readline().rstrip())
-adjacency = {v: [] for v in range(0, n)}
+adjacency = {v: [] for v in range(n)}
 
 
 for i in range(n-1):

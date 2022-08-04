@@ -5,7 +5,7 @@ input = stdin.readline
 n, m = map(int, input().split())
 
 graph = [[] for _ in range(n)]
-for i in range(m):
+for _ in range(m):
     u, v = [int(i) - 1 for i in input().split()]
     graph[u].append(v)
     graph[v].append(u)

@@ -10,7 +10,7 @@ def polynomial_hash(str, p, m):
     for char in str:
         hash_val = ((hash_val + ord(char) * power_of_p) % m)
         power_of_p = (power_of_p * p) % m
- 
+
     return int(hash_val)
 
 print(polynomial_hash(string[::-1], base, tablesize))

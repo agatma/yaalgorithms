@@ -35,35 +35,26 @@ def remove(root, key):
         return root
 
     if root.value == key:
-        if root.right and root.left:
-            [psucc, succ] = _find_min(root.right, root)
-            if psucc.left == succ:
-                psucc.left = succ.right
-            else:
-                psucc.right = succ.right
-            succ.left = root.left
-            succ.right = root.right
-            return succ
+        if not root.right or not root.left:
+            return root.left or root.right
+        [psucc, succ] = _find_min(root.right, root)
+        if psucc.left == succ:
+            psucc.left = succ.right
         else:
-            if root.left:
-                return root.left
-            else:
-                return root.right
-    else:
-        if root.value > key:
-            if root.left:
-                root.left = remove(root.left, key)
-        else:
-            if root.right:
-                root.right = remove(root.right, key)
+            psucc.right = succ.right
+        succ.left = root.left
+        succ.right = root.right
+        return succ
+    elif root.value > key:
+        if root.left:
+            root.left = remove(root.left, key)
+    elif root.right:
+        root.right = remove(root.right, key)
     return root
 
 
 def _find_min(root, parent):
-    if root.left:
-        return _find_min(root.left, root)
-    else:
-        return [parent, root]
+    return _find_min(root.left, root) if root.left else [parent, root]
 
 
 def test():

@@ -17,12 +17,12 @@ def polynomial_hash(str, p, m):
     return int(hash_val)
 
 letters = string.ascii_lowercase
-str = ''.join(random.choice(letters) for i in range(10))
+str = ''.join(random.choice(letters) for _ in range(10))
 hash = polynomial_hash(str[::-1], base, tablesize)
 map = {}
 
 while True:
-    str = ''.join(random.choice(letters) for i in range(20))
+    str = ''.join(random.choice(letters) for _ in range(20))
     hash = polynomial_hash(str[::-1], base, tablesize)
     if not map.get(hash):
         map[hash] = str

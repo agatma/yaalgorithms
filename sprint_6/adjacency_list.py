@@ -4,7 +4,7 @@ n, m = map(int, input().split())
 
 edges = []
 
-for it in range(m):
+for _ in range(m):
     r, c = map(int, input().split())
     edges.append((r, c))
 

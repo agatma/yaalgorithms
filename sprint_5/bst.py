@@ -17,8 +17,8 @@ def is_bst(node):
                    (max_l is None or node.value > max_l) and
                    (min_r is None or node.value < min_r))
 
-    min_value = min([x for x in [min_l, node.value, min_r] if x is not None])
-    max_value = max([x for x in [max_l, node.value, max_r] if x is not None])
+    min_value = min(x for x in [min_l, node.value, min_r] if x is not None)
+    max_value = max(x for x in [max_l, node.value, max_r] if x is not None)
 
     return is_bst_node, min_value, max_value
 

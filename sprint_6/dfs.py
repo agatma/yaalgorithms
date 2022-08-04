@@ -4,11 +4,9 @@ n, m = map(int, input().split())
 
 edges = []
 
-for it in range(m):
+for _ in range(m):
     r, c = map(int, input().split())
-    edges.append((r, c))
-    edges.append((c, r))
-
+    edges.extend(((r, c), (c, r)))
 adj = {k: [v[1] for v in g] for k, g in groupby(sorted(edges), lambda e: e[0])}
 
 for row in range(1, n+1):

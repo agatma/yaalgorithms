@@ -67,9 +67,8 @@ class Stack:
     def pop(self):
         if self.is_empty:
             raise NoItemsException
-        else:
-            self._size -= 1
-            return self._array.pop()
+        self._size -= 1
+        return self._array.pop()
 
 
 stack = Stack()

@@ -55,10 +55,10 @@ def free_text_query(index, string, limit=5, n_docs=10**4):
 
 n = int(input())
 
-documents = [[]] + [input().split() for document in range(n)]
+documents = [[]] + [input().split() for _ in range(n)]
 search_index = full_index(documents)
 
 m = int(input())
 
-for request in range(m):
+for _ in range(m):
     print(*free_text_query(search_index, input(), limit=5, n_docs=n+1))

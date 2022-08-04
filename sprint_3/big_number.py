@@ -6,6 +6,6 @@ def mycmp(a, b):
 
 
 input()
-array = [tuple([int(x), x]) for x in input().split(' ')]
+array = [(int(x), x) for x in input().split(' ')]
 array.sort(key=functools.cmp_to_key(mycmp))
 print(''.join([x[1] for x in array]), end='')

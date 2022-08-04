@@ -49,7 +49,7 @@ def find_pivot(arr):
             low = mid + 1
         else:
             high = mid
-    return high if high else len(arr) - 1
+    return high or len(arr) - 1
 
 
 def broken_search(nums, target):

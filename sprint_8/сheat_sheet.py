@@ -33,7 +33,7 @@ def create_tree(words):
     root = Node('')
     for word in words:
         node = root
-        for index, char in enumerate(word):
+        for char in word:
             node.next[char] = node.next.get(char, Node(char))
             node = node.next[char]
         node.terminal = len(word)

@@ -6,11 +6,10 @@ def nearest_zero(array):
             distance[i] = 0
             distance_zero = 0
             for j in range(i, 0-1, -1):
-                if distance_zero <= distance[j]:
-                    distance[j] = distance_zero
-                    distance_zero += 1
-                else:
+                if distance_zero > distance[j]:
                     break
+                distance[j] = distance_zero
+                distance_zero += 1
             distance_zero = 0
         else:
             distance_zero += 1

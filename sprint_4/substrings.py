@@ -3,7 +3,7 @@ def longest_without_duplication(s):
     cnt = 0
     max_cnt = 0
     begin, end = 0, len(s)-1
-    
+
     while begin <= end:
         if s[begin] not in max_s:
             max_s += s[begin]

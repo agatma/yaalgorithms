@@ -49,7 +49,7 @@ def add_vertex(vertex, graph_edges, added, edges):
 
 
 n, m = map(int, input().split())
-graph = [[] for i in range(n+1)]
+graph = [[] for _ in range(n+1)]
 
 for _ in range(m):
     f, t, w = map(int, input().split())
@@ -69,4 +69,4 @@ while not all(added) and edges:
         maximum_spanning_tree += abs(weight)
         add_vertex(vertex, graph[vertex], added, edges)
 
-print('Oops! I did it again' if not all(added) else maximum_spanning_tree)
+print(maximum_spanning_tree if all(added) else 'Oops! I did it again')

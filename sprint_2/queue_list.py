@@ -23,7 +23,7 @@ class QueueUsingList:
 n = int(input())
 queueUsingList = QueueUsingList()
 
-for i in range(n):
+for _ in range(n):
     try:
         command = input().split(' ')
         if len(command) == 1:

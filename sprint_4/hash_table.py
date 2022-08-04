@@ -73,9 +73,7 @@ class HashTable:
 
             if self._slots[next_slot] is None:
                 self._slots[next_slot] = key
-                self._data[next_slot] = data
-            else:
-                self._data[next_slot] = data
+            self._data[next_slot] = data
 
     def hash(self, key):
         return hash(key) % self._size

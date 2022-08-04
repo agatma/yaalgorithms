@@ -14,6 +14,6 @@ def polynomial_hash(str, p, m):
     return hash_val
 
 
-for i in range(int(input())):
+for _ in range(int(input())):
     l, r = input().split()
     print(polynomial_hash(reversed(string[int(l)-1:int(r)]), base, tablesize))

@@ -44,7 +44,7 @@ n = int(input())
 max_size = int(input())
 sizedQueue = MyQueueSized(max_size)
 
-for i in range(n):
+for _ in range(n):
     try:
         command = input().split(' ')
         if len(command) == 1:

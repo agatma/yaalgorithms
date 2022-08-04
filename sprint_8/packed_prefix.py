@@ -32,7 +32,7 @@ def unpack(string):
             previous = ''.join(symbol.pop())
             symbol[-1].append(previous * multiply.pop())
             continue
-        if len(symbol) == 0:
+        if not symbol:
             result.append(char)
             continue
         symbol[-1].append(char)

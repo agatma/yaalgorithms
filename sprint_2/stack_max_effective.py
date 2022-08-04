@@ -6,10 +6,7 @@ class StackMaxEffective:
         return bool(self.stack_)
 
     def push(self, item):
-        if self.stack_:
-            new_max = max(item, self.stack_[-1][1])
-        else:
-            new_max = item
+        new_max = max(item, self.stack_[-1][1]) if self.stack_ else item
         self.stack_.append((item, new_max))
 
     def pop(self):

@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 graph = [[float("inf")] * n for _ in range(n)]
 
-for it in range(m):
+for _ in range(m):
     r, c, w = map(int, input().split())
     if graph[r - 1][c - 1] == float("inf"):
         graph[r - 1][c - 1] = graph[c - 1][r - 1] = w

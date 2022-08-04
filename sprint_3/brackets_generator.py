@@ -8,13 +8,13 @@ def generator(n):
         return d[k]
 
     if n <= 0:
-        return set([''])
+        return {''}
 
     new_data = set()
     for i in get_gen(n - 1):
-        new_data.add('(' + i + ')')
-        new_data.add(i + '()')
-        new_data.add('()' + i)
+        new_data.add(f'({i})')
+        new_data.add(f'{i}()')
+        new_data.add(f'(){i}')
 
     for j in range(2, n // 2 + 1):
         b = get_gen(j)
